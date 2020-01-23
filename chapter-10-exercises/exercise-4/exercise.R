@@ -4,9 +4,12 @@
 # file into a variable called `grants` using the `read.csv()`
 # Be sure to set your working directory in RStudio, and do NOT treat strings as 
 # factors!
+money_csv <- read.csv("gates_money.csv", stringsAsFactors = FALSE)
+
 
 
 # Use the View function to look at the loaded data
+View((money_csv))
 
 
 # Create a variable `organization` that contains the `organization` column of 
