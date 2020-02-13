@@ -1,0 +1,33 @@
+---
+title: "R Markdown Demo"
+author: "Aaron"
+date: "2/11/2020"
+output: html_document
+---
+
+**This is my report!**
+
+I like writing **reports**
+
+```{r example, include=FALSE}
+
+numbers <- runif(1:100)
+hist(numbers)
+numbers_mean <- mean (numbers)
+
+img_url <- "![puppies](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdogtime.com%2Fpuppies%2F1130-puppy-behavior-basics-hsus&psig=AOvVaw1eyt6R_UHbrAp_D0OdKRTW&ust=1581548626974000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOC4wPPNyucCFQAAAAAdAAAAABAD)"
+
+letters <- c("a", "b", "c", "d")
+numbers <- 1:4
+df <- data.frame(letters = letters, numbers = numbers)
+```
+
+
+`r kable(df)`
+
+The mean of the numbers happens to be **`r numbers_mean`**.
+
+```{r other_chunk}
+print(numbers)
+
+```

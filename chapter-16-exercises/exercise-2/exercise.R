@@ -12,10 +12,11 @@ library("ggplot2")
 
 # Draw a column (bar) chart of diamonds cuts by price, with each bar filled by 
 # clarity. You should see a _stacked_ bar chart.
+ggplot(data = diamonds) +
+  geom_col(mapping = aes(x = cut, y = price, fill = clarity))
 
 
 # Draw the same chart again, but with each element positioned to "fill" the y axis
-
 
 # Draw the same chart again, but with each element positioned to "dodge" each other
 
@@ -34,11 +35,14 @@ library("ggplot2")
 ## Scales
 
 # Draw a "boxplot" (with `geom_boxplot`) for the diamond's price (y) by color (x)
-
+ggplot(data = diamonds) +
+  geom_boxplot(mapping = aes(x = color, y = price))
 
 # This has a lot of outliers, making it harder to read. To fix this, draw the 
 # same plot but with a _logarithmic_ scale for the y axis.
-
+ggplot(data = diamonds) +
+  geom_boxplot(mapping = aes(x = color, y = price)) +
+  scale_y_log10()
 
 # For another version, draw the same plot but with `violin` geometry instead of 
 # `boxplot` geometry!
